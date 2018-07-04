@@ -49,6 +49,8 @@ http://javasampleapproach.com/frontend/angular/angular-5-firebase-crud-operation
 - path of service : app/auth/user/user.ts (service which have all the methods for login)
 - path of form : app/auth/register
 
+- addUser method o fuser.ts is used to register user anf save the data of user details at real time database. 
+
 
 # sign in 
 
@@ -70,7 +72,7 @@ Log in using otp from mobile number
 Path : - app/auth/login/phone-login
 which includes a form to enter phone number,otp  and verify captcha 
 
-
+# C
 
 
 # Angular5FirebaseCRUD
