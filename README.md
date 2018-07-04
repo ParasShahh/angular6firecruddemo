@@ -1,5 +1,6 @@
 # developed published by Paras shah
 
+# Angular6 Firebase CRUD Demo
 
 # Fire base setup 
 https://console.firebase.google.com/u/0/
@@ -45,7 +46,7 @@ you can reffer this link for basic set up for crud operation
 http://javasampleapproach.com/frontend/angular/angular-5-firebase-crud-operations-with-angularfire2-v5
 
 
-#sign up 
+# sign up 
 - path of service : app/auth/user/user.ts (service which have all the methods for login)
 - path of form : app/auth/register
 
@@ -72,12 +73,13 @@ Log in using otp from mobile number
 Path : - app/auth/login/phone-login
 which includes a form to enter phone number,otp  and verify captcha 
 
-# C
+# CRUD operation  
+
+- All methods for CRUD is written at  ** \src\app\customers\customer.service.ts ** 
 
 
-# Angular5FirebaseCRUD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
+
 
 ## Development server
 
