@@ -1,0 +1,52 @@
+<div class="auth-main">
+  <div class="auth-block">
+    <h1 >Login </h1>
+   <u> <a routerLink="/register" class="auth-link" >Sign up link</a></u>
+   <button  id="sign-in" type="button" (click)="login()" class="btn btn-success commonbutton ">
+   Sign-in with Google
+  </button>
+  <button  id="sign-in" type="button" (click)="loginGit()" class="btn btn-success commonbutton ">
+    Sign-in with Github
+   </button>
+  <button  id="sign-in" type="button" (click)="loginwithNumber()" class="btn btn-success commonbutton ">
+    Sign-in with Phone number
+   </button>
+    <form *ngIf="!contactlogin"  [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+      <div class="form-group row" [ngClass]="{'has-error': (!userName.valid && userName.touched), 'has-success': (userName.valid && userName.touched)}">
+        <!-- <label for="inputuserName3" class="col-sm-2 control-label" >User Name</label> -->
+
+        <div class="col-sm-12">
+          <input [formControl]="userName" type="userName" class="form-control inputlabelcommon" id="inputuserName3" placeholder="User Name">
+        </div>
+         <!--for email validation-->
+                    <div class="md-errors-spacer" [hidden]="userName.valid || userName.untouched">
+        <div  style= " padding-left: 100px ; color: red;" *ngIf="userName.errors && userName.errors.required">
+           <div> Email is required</div>
+        </div>
+        <div  style= " padding-left: 100px ; color: red;" *ngIf="userName.errors && !userName.valid && !userName.errors.required">
+            Email is invalid
+        </div>
+    </div>
+
+                <!--for email validation-->
+      </div>
+      <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+        <!-- <label for="inputPassword3" class="col-sm-2 control-label" >Password</label> -->
+
+        <div class="col-sm-12">
+          <input [formControl]="password" type="password" class="form-control inputlabelcommon" id="inputPassword3" placeholder="Password">
+        </div>
+      </div>
+      <div style="color: red">{{errormessage}}</div>
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <button [disabled]="!form.valid" type="submit" class="btn btn-success " >sign in</button>
+          <!-- <a routerLink="/forgotpassword" class="forgot-pass" >forgot Password</a> -->
+        </div>
+      </div>
+    </form>
+    <app-phone-login *ngIf=contactlogin ></app-phone-login>
+    
+ 
+  </div>
+</div>

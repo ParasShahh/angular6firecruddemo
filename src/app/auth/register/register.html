@@ -1,0 +1,84 @@
+<div class="auth-main">
+  <div class="auth-block">
+    <h1>Sign up to Good Day Bad Day</h1>
+    <a routerLink="/login" class="auth-link "><u> Already have an account? Sign in! </u></a>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
+      <div class="form-group row" [ngClass]="{'has-error': (!firstName.valid && userName.touched), 'has-success': (firstName.valid && firstName.touched)}">
+        <label for="inputuserName3" class="col-sm-3 control-label">First Name</label>
+
+        <div class="col-sm-9">
+          <input [formControl]="firstName" type="text" class="form-control inputlabelcommon" id="inputuserName3" placeholder="First Name" >
+        </div>
+      </div>
+       <div class="form-group row" [ngClass]="{'has-error': (!lastName.valid && lastName.touched), 'has-success': (lastName.valid && lastName.touched)}">
+        <label for="inputuserName3" class="col-sm-3 control-label">Last Name</label>
+
+        <div class="col-sm-9">
+          <input [formControl]="lastName" type="text" class="form-control inputlabelcommon" id="inputuserName3" placeholder="Last Name">
+        </div>
+      </div>
+      
+      <div class="form-group row" [ngClass]="{'has-error': (!userName.valid && userName.touched), 'has-success': (userName.valid && userName.touched)}">
+        <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+
+        <div class="col-sm-9">
+          <input [formControl]="userName" type="userName" class="form-control inputlabelcommon" id="userName" placeholder="Email"   >
+        </div>
+      </div>
+         <!--for email validation-->
+                    <div class="md-errors-spacer" [hidden]="userName.valid || userName.untouched">
+        <div style="text-align: center; color: red;" *ngIf="userName.errors && userName.errors.required">
+            Email is required
+        </div>
+        <div style="text-align: center; color: red;" class="md-char-counter" *ngIf="userName.errors && !userName.valid && !userName.errors.required">
+            Email is invalid
+        </div>
+    </div>
+
+                <!--for email validation-->
+
+
+
+
+      
+    
+      <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+        <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+
+        <div class="col-sm-9">
+          <input [formControl]="password" type="password" class="form-control inputlabelcommon" id="inputPassword3" placeholder="Password" >
+        </div>
+      </div>
+      
+
+       <div class="form-group row" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
+        <label for="inputPassword4"  class="col-sm-3 control-label">Repeat Password</label>
+
+        <div class="col-sm-9">
+          <input [formControl]="repeatPassword" type="password" class="form-control inputlabelcommon" id="inputPassword4" placeholder="Repeat">
+          <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Passwords don't match.</span>
+        </div>
+      </div>
+
+     <div style="-webkit-text-fill-color: red; text-align: center;">{{errormessage}}
+							</div>
+      
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-10">
+          <button [disabled]="!form.valid"  type="submit" class="btn btn-success commonbutton1">Sign up</button>
+        </div>
+      </div>
+    </form>
+
+    <!-- <div class="auth-sep"><span><span>or Sign up with one click</span></span></div>
+
+    <div class="al-share-auth">
+      <ul class="al-share clearfix">
+        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
+        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
+        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+      </ul>
+    </div> -->
+  </div>
+</div>

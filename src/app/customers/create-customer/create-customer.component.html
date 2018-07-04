@@ -1,0 +1,45 @@
+<h2>Set Custom path</h2>
+
+<div class="form-group col-md-12">
+	<label for="age">Path name </label> <input type="text"
+		class="form-control" id="age" required [(ngModel)]="custompath"
+		name="age">
+<button type="button" (click)="setPath()" style="margin: 20px" class="col-md-3 btn btn-success">Set Path</button>
+
+</div>
+
+
+
+
+<h3>Create Customer</h3>
+
+
+<div [hidden]="submitted" class="col-md-12" style="width: 300px;">
+	<form (ngSubmit)="onSubmit()">
+			<input type="file" #fileInput  name="files[]"  (change)="processWebImage($event)" />
+			<div class="profile-image-wrapper" >
+			  <img src="{{Profilepic}}"  class="profile-image" *ngIf="Profilepic != null" title="profile" alt="Profile"  >
+			</div>
+		<div class="form-group">
+			<label for="name">Name</label> <input type="text"
+				class="form-control" id="name" required [(ngModel)]="customer.name"
+				name="name">
+		</div>
+
+		<div class="form-group">
+			<label for="age">Age</label> <input type="text"
+				class="form-control" id="age" required [(ngModel)]="customer.age"
+				name="age">
+		</div>
+		<div class="row">
+		<button type="submit" *ngIf="!editMode" style="margin: 20px" class="col-md-3 btn btn-success">Submit</button>
+		<button type="button" (click)=" updateActive()" style="margin: 20px" class="col-md-3 btn btn-success">Update</button>
+		</div>
+
+	</form>
+</div>
+
+<div [hidden]="!submitted">
+	<h4>Data submitted successfully!</h4>
+	<button class="btn btn-success" style="margin: 20px" (click)="newCustomer()"> Great!!!</button>
+</div>
