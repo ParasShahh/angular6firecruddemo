@@ -1,3 +1,42 @@
+# What is Firebase?
+Firebase is a Backend-as-a-Service — BaaS — that started as a YC11 startup and grew up into a next-generation app-development platform on Google Cloud Platform.
+
+I’ve been using Firebase since 2013. I was late to the game :)
+
+I use Firebase to power my family’s business, Calligraphy.org. I also use it for everything I’ve developed in the last three years.
+
+Firebase frees developers to focus crafting fantastic user experiences. You don’t need to manage servers. You don’t need to write APIs. Firebase is your server, your API and your datastore, all written so generically that you can modify it to suit most needs. Yeah, you’ll occasionally need to use other bits of the Google Cloud for your advanced applications. Firebase can’t be everything to everybody. But it gets pretty close.
+
+#It’s a Realtime Database
+Real-time data is the way of the future. Nothing compares to it.
+
+Most databases require you to make HTTP calls to get and sync your data. Most databases give you data only when you ask for it.
+
+When you connect your app to Firebase, you’re not connecting through normal HTTP. You’re connecting through a WebSocket. WebSockets are much, much faster than HTTP. You don’t have to make individual WebSocket calls, because one socket connection is plenty. All of your data syncs automagically through that single WebSocket as fast as your client’s network can carry it.
+
+Firebase sends you new data as soon as it’s updated. When your client saves a change to the data, all connected clients receive the updated data almost instantly.
+
+#It’s File Storage
+Firebase Storage provides a simple way to save binary files — most often images, but it could be anything — to Google Cloud Storage directly from the client!!!
+
+Firebase Storage has it’s own system of security rules to protect your GCloud bucket from the masses, while granting detailed write privileges to your authenticated clients.
+
+#It’s Authentication
+Firebase auth has a built in email/password authentication system. It also supports OAuth2 for Google, Facebook, Twitter and GitHub. We’ll focus on email/password authentication for the most part. Firebase’s OAuth2 system is well-documented and mostly copy/paste.
+
+If you’ve ever written an authentication system, let’s commiserate for a moment. Custom authentication is terrible. I will never write an auth system again for as long as I live. I fell in love with Firebase Auth at first sight, and the flame has never wavered. Sometimes I get frustrated. Sometimes we fight. But I never forget the cold, dark abyss of a custom auth system. I count my blessings.
+
+Oh, and Firebase Auth integrates directly into Firebase Database, so you can use it to control access to your data. I’m writing this as if it’s an afterthought. It’s not. It’s the second reason that you will love Firebase Auth.
+
+#It’s Hosting
+Firebase includes an easy-to-use hosting service for all of your static files. It serves them from a global CDN with HTTP/2.
+
+And to make your development particularly painless, Firebase hosting utilizes Superstatic, which you can run locally for all of your testing. I run Superstatic as BrowserSync middleware. The following implementation uses Gulp, but Gulp is purely optional.
+
+
+
+
+
 # developed published by Paras shah
 
 # Angular6 Firebase CRUD Demo
